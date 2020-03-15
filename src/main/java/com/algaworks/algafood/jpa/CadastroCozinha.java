@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +19,10 @@ public class CadastroCozinha {
 	public List<Cozinha> listar() {
 		return manager.createQuery("from Cozinha", Cozinha.class).getResultList();
 
+	}
+	
+	public Cozinha buscar(Long id) {
+		return manager.find(Cozinha.class, id);
 	}
 	
 	@Transactional
