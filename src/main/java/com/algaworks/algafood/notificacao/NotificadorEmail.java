@@ -7,18 +7,10 @@ import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.modelo.Cliente;
 
-//@Primary
-//@Qualifier("urgente")
-@Profile("prod")
 @TipoDoNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificadorEmail implements Notificador {
 	
-//	@Value("${notificador.email.host-servidor}")
-//	private String host;
-//	
-//	@Value("${notificador.email.porta-servidor}")
-//	private Integer porta;
 	
 	@Autowired
 	private NotificadorProperties properties;
