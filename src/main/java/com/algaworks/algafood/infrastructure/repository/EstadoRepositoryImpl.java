@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.algaworks.algafood.domain.model.Estado;
-import com.algaworks.algafood.doman.repository.EstadoRepository;
+import com.algaworks.algafood.domain.repository.EstadoRepository;
 
 @Component
 public class EstadoRepositoryImpl implements EstadoRepository{

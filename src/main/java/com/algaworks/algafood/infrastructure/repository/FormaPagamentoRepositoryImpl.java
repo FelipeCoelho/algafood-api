@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.algaworks.algafood.domain.model.FormaPagamento;
-import com.algaworks.algafood.doman.repository.FormaPagamentoRepository;
+import com.algaworks.algafood.domain.repository.FormaPagamentoRepository;
 
 @Component
 public class FormaPagamentoRepositoryImpl implements FormaPagamentoRepository {
