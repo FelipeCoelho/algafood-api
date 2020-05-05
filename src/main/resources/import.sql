@@ -15,3 +15,5 @@ insert into cidade (id, nome, estado_id) values(4,'Curitiba',2);
 insert into cidade (id, nome, estado_id) values(5,'Cascavel',2);
 
 insert into permissao (id, nome, descricao) values (1,'Administrador','Administrador do sistema');
+
+insert into restaurante_forma_pagamento(restaurante_id, forma_pagamento_id) values (1,1), (1,2), (1,3) ,(2,3),(3,2) ,(3,3);
