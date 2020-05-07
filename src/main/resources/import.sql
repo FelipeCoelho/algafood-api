@@ -10,9 +10,9 @@ insert into cidade (id, nome, estado_id) values(3,'Ribeirão Preto',1);
 insert into cidade (id, nome, estado_id) values(4,'Curitiba',2);
 insert into cidade (id, nome, estado_id) values(5,'Cascavel',2);
 
-insert into restaurante (nome, taxa_frete, cozinha_id, endereco_cidade_id, endereco_cep, endereco_logradouro, endereco_numero, endereco_bairro) values('Thais Gourmet',10, 1, 1, '14806122', 'Rua Teste','1000','Centro');
-insert into restaurante (nome, taxa_frete, cozinha_id) values('Thais Delivery', 9.50, 1);
-insert into restaurante (nome, taxa_frete, cozinha_id) values('Tuk Tuk comida Indiana',15, 2); 
+insert into restaurante (nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao, endereco_cidade_id, endereco_cep, endereco_logradouro, endereco_numero, endereco_bairro) values('Thais Gourmet',10, 1, utc_timestamp, utc_timestamp, 1, '14806122', 'Rua Teste','1000','Centro');
+insert into restaurante (nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao) values ('Thais Delivery', 9.50, 1, utc_timestamp, utc_timestamp);
+insert into restaurante (nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao ) values ('Tuk Tuk comida Indiana',15, 2, utc_timestamp, utc_timestamp); 
 
 insert into permissao (id, nome, descricao) values (1,'Administrador','Administrador do sistema');
 
