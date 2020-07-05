@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
@@ -36,19 +37,14 @@ public class CidadeController {
 	}
 
 	@GetMapping("/{cidadeId}")
-	public ResponseEntity<Cidade> buscar(@PathVariable("cidadeId") Long id) {
-		Optional<Cidade> cidade = cidadeRepository.findById(id);
-
-		if (cidade.isPresent()) {
-			return ResponseEntity.ok(cidade.get());
-		}
-		return ResponseEntity.notFound().build();
+	public Cidade buscar(@PathVariable("cidadeId") Long id) {
+		return cadastroCidade.buscarOuFalhar(id);
 	}
 
 	@PostMapping
-	public ResponseEntity<Cidade> adicionar(@RequestBody Cidade cidade) {
-		Cidade cidadeSalva = cadastroCidade.salvar(cidade);
-		return ResponseEntity.status(HttpStatus.CREATED).body(cidadeSalva);
+	@ResponseStatus(HttpStatus.CREATED)
+	public Cidade adicionar(@RequestBody Cidade cidade) {
+		return cadastroCidade.salvar(cidade);
 	}
 
 	@PutMapping("/{cidadeId}")
